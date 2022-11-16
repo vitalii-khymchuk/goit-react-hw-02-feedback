@@ -11,33 +11,11 @@ export default function Controls({ onLeaveFeedback, options }) {
           </Button>
         </ControlItem>
       ))}
-      {/* <ControlItem id="qq">
-        <Button
-          type="button"
-          color="green"
-          onClick={() => increaseRating('good')}
-        >
-          Good
-        </Button>
-      </ControlItem>
-      <ControlItem id="qa">
-        <Button
-          type="button"
-          color="yellow"
-          onClick={() => increaseRating('neutral')}
-        >
-          Neutral
-        </Button>
-      </ControlItem>
-      <ControlItem id="qw">
-        <Button type="button" color="red" onClick={() => increaseRating('bad')}>
-          Bad
-        </Button>
-      </ControlItem> */}
     </ButtonsList>
   );
 }
 
 Controls.propTypes = {
-  increaseRating: PropTypes.func.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.array(PropTypes.string.isRequired),
 };
