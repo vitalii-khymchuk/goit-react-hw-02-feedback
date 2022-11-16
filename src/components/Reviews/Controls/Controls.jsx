@@ -17,5 +17,5 @@ export default function Controls({ onLeaveFeedback, options }) {
 
 Controls.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
-  options: PropTypes.array(PropTypes.string.isRequired),
+  options: PropTypes.arrayOf(PropTypes.string.isRequired),
 };
