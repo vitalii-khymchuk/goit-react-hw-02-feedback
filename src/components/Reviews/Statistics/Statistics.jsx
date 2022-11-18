@@ -5,21 +5,21 @@ export default function Statistics({ good, neutral, bad, total, positive }) {
   return (
     <>
       <StatList>
-        <StatItem id="1">
+        <StatItem key="1">
           <span>Good:</span> {good}
         </StatItem>
-        <StatItem id="2">
+        <StatItem key="2">
           <span>Neutral:</span> {neutral}
         </StatItem>
-        <StatItem id="3">
+        <StatItem key="3">
           <span>Bad:</span> {bad}
         </StatItem>
       </StatList>
       <StatList>
-        <StatItem id="4">
+        <StatItem key="4">
           <span>Total:</span> {total}
         </StatItem>
-        <StatItem id="5">
+        <StatItem key="5">
           <span>Positive:</span> {positive}%
         </StatItem>
       </StatList>

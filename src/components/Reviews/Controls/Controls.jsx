@@ -5,7 +5,7 @@ export default function Controls({ onLeaveFeedback, options }) {
   return (
     <ButtonsList>
       {options.map(item => (
-        <ControlItem>
+        <ControlItem key={item}>
           <Button type="button" onClick={() => onLeaveFeedback(item)}>
             {item}
           </Button>
