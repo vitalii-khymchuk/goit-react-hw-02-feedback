@@ -1,25 +1,26 @@
 import PropTypes from 'prop-types';
 import { StatList, StatItem } from './Statistics.styled';
 
-export default function Statistics({ good, neutral, bad, total, positive }) {
+export default function Statistics({ statData, total, positive }) {
   return (
     <>
+      {/* Тепер ця штука маштабуєма)) */}
       <StatList>
-        <StatItem key="1">
-          <span>Good:</span> {good}
-        </StatItem>
-        <StatItem key="2">
-          <span>Neutral:</span> {neutral}
-        </StatItem>
-        <StatItem key="3">
-          <span>Bad:</span> {bad}
-        </StatItem>
+        {Object.entries(statData).map(item => {
+          const statName = item[0];
+          const statValue = item[1];
+          return (
+            <StatItem key={statName}>
+              <span>{statName}:</span> {statValue}
+            </StatItem>
+          );
+        })}
       </StatList>
       <StatList>
-        <StatItem key="4">
+        <StatItem>
           <span>Total:</span> {total}
         </StatItem>
-        <StatItem key="5">
+        <StatItem>
           <span>Positive:</span> {positive}%
         </StatItem>
       </StatList>
@@ -28,9 +29,11 @@ export default function Statistics({ good, neutral, bad, total, positive }) {
 }
 
 Statistics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
+  statData: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
   total: PropTypes.number.isRequired,
   positive: PropTypes.number.isRequired,
 };
